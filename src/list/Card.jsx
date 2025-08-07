@@ -31,7 +31,7 @@ function Card() {
         <div className='cont'>
             {
                 items.map((item) => (
-                    <div className="card" key={item.id} onClick={() => handleAddToCart(item)}>
+                    <div className="card" key={item.id}>
                         {
                             getQuantity(item?.id) ?
                                 <span>{getQuantity(item?.id)}</span> : ''
@@ -40,8 +40,8 @@ function Card() {
                         <div className="detail">
                             <h4>{item.title}</h4>
                             <p>Rs.{item.price}</p>
-                            <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
                         </div>
+                        <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
                     </div>
                 ))
             }
