@@ -1,0 +1,17 @@
+
+.container{
+    background-color:rgb(187, 202, 127);
+    padding: 10px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list {
+    display: flex;
+    gap: 20px;
+}
