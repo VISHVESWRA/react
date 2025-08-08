@@ -23,9 +23,9 @@ function CartPage() {
                     <p>Qty: {item.quantity}</p>
                     <p>Rs.{item.price * item.quantity}</p>
                     <button onClick={() => dispatch(removeFromCart(item.id))}>Remove</button>
+                    <hr />
                 </div>
             ))}
-            <hr />
             <h3>Total: Rs.{total}</h3>
             <button onClick={() => dispatch(clearCart(cartItems))}>Checkout</button>
 

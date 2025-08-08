@@ -25,7 +25,6 @@
 }
 
 .card span{
-    position: absolute;
     margin: 5px 5px;
     background: #cecccc;
     border-radius: 20px;
