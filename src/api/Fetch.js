@@ -20,20 +20,6 @@ export const createList = createAsyncThunk('products/createList', async (newProd
     return data;
 })
 
-
-// export const updateList = createAsyncThunk('products/updateList', async (getData) => {
-//     const list  = await fetch('https://fakestoreapi.in/api/products', {
-//         method: 'PUT',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(getData)
-//     });
-//     const data = await list?.json();
-//     alert(data?.message);
-//     return data;
-// })
-
 export const updateList = createAsyncThunk('products/updateList', async (getData) => {
     const { id, ...updateData } = getData;
     const list = await fetch(`https://fakestoreapi.in/api/products/${id}`, {

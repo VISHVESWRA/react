@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { createList, deleteList, fetchList, updateList } from './Fetch';
+import { createList, deleteList, fetchList, updateList  } from '../api/Fetch';
 
 const productSlice = createSlice({
     name: 'products',
@@ -14,9 +14,6 @@ const productSlice = createSlice({
             .addCase(createList.fulfilled, (state, action) => {
                 state.items.push(action.payload)
             })
-            // .addCase(updateList.fulfilled, (state, action) => {
-            //     state.items.put(action.payload)
-            // })
             .addCase(updateList.fulfilled, (state, action) => {
                 const index = state.items.findIndex(p => p.id === action.payload.id);
                 if (index !== -1) {

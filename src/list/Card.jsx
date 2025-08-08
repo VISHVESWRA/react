@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './Card.css'
 import { useEffect } from 'react';
-import { fetchList } from '../redux/Fetch';
+import { fetchList } from '../api/Fetch';
 import { useAuth } from '../auth/Auth';
 import { Navigate } from 'react-router-dom';
 import { addToCart } from '../redux/Cart';
@@ -39,10 +39,10 @@ function Card() {
                         </div>
                         <button onClick={() => handleAddToCart(item)}>Add to Cart
 
-                        {
-                         getQuantity(item?.id) ?
-                                <span>{getQuantity(item?.id)}</span> : ''
-                        }
+                            {
+                                getQuantity(item?.id) ?
+                                    <span>{getQuantity(item?.id)}</span> : ''
+                            }
                         </button>
                     </div>
                 ))

@@ -3,9 +3,8 @@ import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '../auth/Auth';
 import './Form.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { createList, fetchList, updateList } from '../redux/Fetch';
-import { useEffect, useState } from 'react';
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createList, fetchList, updateList } from '../api/Fetch';
+import { useEffect } from 'react';
 
 function MyForm() {
     const { isLoggedIn } = useAuth();
@@ -26,8 +25,7 @@ function MyForm() {
                 try {
                     const res = await fetch(`https://fakestoreapi.in/api/products/${id}`);
                     const data = await res.json();
-                    // setProduct(data?.product);
-                    if (id ) {
+                    if (id) {
                         reset({
                             id: data.product?.id,
                             title: data.product?.title,
