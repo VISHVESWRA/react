@@ -42,7 +42,7 @@ const List = () => {
       <div style={{margin:'16px'}}>
         <input
           type="text"
-          placeholder="Search by title, brand, or category"
+          placeholder="Search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           style={{ padding: '8px', marginBottom: '16px', width: '100%' }}
