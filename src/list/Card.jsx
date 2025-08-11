@@ -32,18 +32,18 @@ function Card() {
             {
                 items.map((item) => (
                     <div className="card" key={item.id}>
-                        <img src={item.image} className="logo react" alt="React logo" />
-                        <div className="detail">
-                            <h4>{item.title}</h4>
-                            <p>Rs.{item.price}</p>
-                        </div>
-                        <button onClick={() => handleAddToCart(item)}>Add to Cart
-
+                        <>
                             {
                                 getQuantity(item?.id) ?
-                                    <span>{getQuantity(item?.id)}</span> : ''
+                                    <span className='quantity'>{getQuantity(item?.id)}</span> : ''
                             }
-                        </button>
+                            <img src={item.image} className="logo react" alt="React logo" />
+                            <div className="detail">
+                                <h4>{item.title}</h4>
+                                <p>Rs.{item.price}</p>
+                            </div>
+                            <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
+                        </>
                     </div>
                 ))
             }
