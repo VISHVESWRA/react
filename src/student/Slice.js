@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchStudent } from "../api/Student";
+import { fetchStudent, postData } from "../api/Student";
 
 
 const studentSlice = createSlice({
@@ -15,6 +15,11 @@ const studentSlice = createSlice({
 
                 //    }else {console.log('not an array');
                 //    }
+            })
+            .addCase(postData.fulfilled, (state, action) => {
+                // state.items.push(action.payload)
+                console.log(action.payload);
+                
             })
     }
 
