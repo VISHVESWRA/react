@@ -4,6 +4,7 @@ import List from '../list/list'
 import MyForm from '../list/Form'
 import Card from '../list/Card'
 import CartPage from '../list/CartPage'
+import StudentList from '../student/StudentList'
 
 const AppRouter = () => {
 
@@ -15,6 +16,7 @@ const AppRouter = () => {
             <Route path='/form/:id' element={<MyForm />} />
             <Route path='/card' element={<Card />} />
             <Route path='/cart' element={<CartPage />} />
+            <Route path='/student' element={<StudentList />} />
         </Routes>
     )
 }

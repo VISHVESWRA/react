@@ -3,6 +3,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchList = createAsyncThunk('products/fetchList', async () => {
     const list = await fetch('https://fakestoreapi.in/api/products?limit=10');
+    // const list = await fetch(`http://localhost:9000/student`);
     const data = await list?.json();
     return data.products;
 })
@@ -42,5 +43,11 @@ export const deleteList = createAsyncThunk('products/deleteList', async (id) => 
     const data = await res.json();
     alert(data?.message || 'Product deleted');
     return id;
+});
+
+export const server = createAsyncThunk('', async () => {
+    console.log(server);
+    const list = await fetch(`http://localhost:9000/api/list`);
+    console.log(list);
 });
 

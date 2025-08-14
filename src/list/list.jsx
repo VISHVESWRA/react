@@ -3,7 +3,7 @@ import { useAuth } from '../auth/Auth';
 import './List.css'
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { deleteList, fetchList, updateList } from '../api/Fetch';
+import { deleteList, fetchList, server, updateList } from '../api/Fetch';
 
 const List = () => {
   const { isLoggedIn } = useAuth();
@@ -37,8 +37,13 @@ const List = () => {
     }
   };
 
+  const connectBack = () => {
+     dispatch(server());
+  }
+
   return (
     <>
+    <button onClick={() => connectBack()}>Send</button>
       <div style={{ margin: '16px' }}>
         <input
           type="text"
