@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { deleteUser, editPassword, fetchStudent, signin, signUp } from "../api/Student";
-
+import { act } from "react";
+import { Navigate } from "react-router-dom";
 
 const studentSlice = createSlice({
     name: 'students',
@@ -13,6 +14,7 @@ const studentSlice = createSlice({
                 state.list = action.payload
             })
             .addCase(signUp.fulfilled, (state, action) => {
+                alert(action.payload.message)
                 state.list.push(action.payload.student);
             })
             .addCase(signin.fulfilled, (state, action) => {
@@ -22,7 +24,6 @@ const studentSlice = createSlice({
                 alert(action.payload.message)
             })
             .addCase(deleteUser.fulfilled, (state, action) => {
-                console.log(action.payload);
                 alert(action.payload.message)
             });
     }

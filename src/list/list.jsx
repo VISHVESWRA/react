@@ -38,12 +38,12 @@ const List = () => {
   };
 
   const connectBack = () => {
-     dispatch(server());
+    dispatch(server());
   }
 
   return (
     <>
-    <button onClick={() => connectBack()}>Send</button>
+      {/* <button onClick={() => connectBack()}>Send</button> */}
       <div style={{ margin: '16px' }}>
         <input
           type="text"

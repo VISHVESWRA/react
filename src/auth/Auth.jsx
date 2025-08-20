@@ -4,11 +4,11 @@ import { useState } from "react"
 
 const AuthContext = createContext();
 
-export const AuthProvider = ({children}) => {
-    const [isLoggedIn, setIsloggedIn] = useState(true);
+export const AuthProvider = ({ children }) => {
+    const [isLoggedIn, setIsloggedIn] = useState(false);
 
-    return(
-        <AuthContext.Provider value={{isLoggedIn, setIsloggedIn}}>
+    return (
+        <AuthContext.Provider value={{ isLoggedIn, setIsloggedIn }}>
             {children}
         </AuthContext.Provider>
     )

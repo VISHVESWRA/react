@@ -46,8 +46,6 @@ export const deleteList = createAsyncThunk('products/deleteList', async (id) => 
 });
 
 export const server = createAsyncThunk('', async () => {
-    console.log(server);
     const list = await fetch(`http://localhost:9000/api/list`);
-    console.log(list);
 });
 

@@ -27,7 +27,6 @@ function StudentList() {
   }
 
   const signUpUser = (data) => {
-    console.log(data);
     dispatch(signUp(data));
     dispatch(fetchStudent())
     setNewRegister(pre => !pre);
@@ -40,7 +39,6 @@ function StudentList() {
   };
 
   const deleteID = (data) => {
-    console.log(data);
     dispatch(deleteUser(data))
     dispatch(fetchStudent())
   }

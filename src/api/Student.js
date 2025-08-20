@@ -6,6 +6,7 @@ export const fetchStudent = createAsyncThunk(
   async () => {
     try {
       const list = await fetch(`http://localhost:9000/students`);
+      // const list = await fetch(`http://localhost:9900/home`);
       const data = await list?.json();
       return data;
     }
