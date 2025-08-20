@@ -12,7 +12,9 @@ function StudentList() {
     formState: { errors },
     reset
   } = useForm();
-  const [newRegister, setNewRegister] = useState(false)
+  const [newRegister, setNewRegister] = useState(false);
+  const min = 1000;
+  const max = 10000;
 
   useEffect(() => {
     dispatch(fetchStudent());
@@ -86,6 +88,10 @@ function StudentList() {
             !newRegister &&
             <span style={{ color: 'blue', fontSize: '14px', textDecoration: 'underline' }} onClick={newFetch}>Create Account</span>
           }
+          {
+            newRegister &&
+            <span style={{ color: 'blue', fontSize: '14px', textDecoration: 'underline' }} onClick={newFetch}>Sign In</span>
+          }
         </>
         <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
           {
@@ -120,7 +126,7 @@ function StudentList() {
                 <span onClick={() => deleteID({ id: user.id })}>Delete</span>
               </div>
               <div style={{ border: '1px solid green', width: '80px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <span onClick={() => editID({ id: user.id, password: '12345678' })}>Edit</span>
+                <span onClick={() => editID({ id: user.id, password: Math.floor(Math.random() * (max - min + 1)) + min })}>Edit</span>
               </div>
             </li>
           ))}
