@@ -25,6 +25,7 @@ function TopNavigation() {
             Cart {cartItems?.length > 0 ? `- (${totalQuantity})` : ""}
           </Link>
           <Link to={"/student"}>Student List</Link>
+          <Link to={"/carList"}>Car List</Link>
         </div>
       </nav>
     </div>
