@@ -2,17 +2,18 @@ import { useAuth } from "../auth/Auth";
 import { useNavigate } from 'react-router-dom'
 import './Login.css'
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { fetchStudent, signin, signUp } from "../api/Student";
 
 function Login() {
 
-    const { setIsloggedIn } = useAuth();
+    const { isLoggedIn, setIsloggedIn } = useAuth();
     const navigate = useNavigate();
 
     const dispatch = useDispatch();
     const [newRegister, setNewRegister] = useState(false);
+    const isloged = useSelector((state) => state.student.isAuthenticated)
 
     const {
         register,
@@ -31,10 +32,15 @@ function Login() {
         setNewRegister(pre => !pre);
         reset();
     };
-
+    console.log('status', isloged);
     const signIn = (data) => {
         dispatch(signin(data));
         setIsloggedIn(true);
+        console.log(isLoggedIn);
+        if (isLoggedIn) {
+            console.log('true');
+
+        }
         navigate('/list')
         reset()
     };

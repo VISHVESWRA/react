@@ -6,7 +6,8 @@ import { Navigate } from "react-router-dom";
 const studentSlice = createSlice({
     name: 'students',
     initialState: {
-        list: []
+        list: [],
+        isAuthenticated: false,
     },
     extraReducers: (builder) => {
         builder
@@ -19,6 +20,8 @@ const studentSlice = createSlice({
             })
             .addCase(signin.fulfilled, (state, action) => {
                 alert(action.payload.message)
+                console.log(action.payload);
+                state.isAuthenticated = action.payload.success
             })
             .addCase(editPassword.fulfilled, (state, action) => {
                 alert(action.payload.message)
